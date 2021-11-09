@@ -14,6 +14,10 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
     
+    override func viewDidLoad() {
+        emailTextfield.keyboardType = .emailAddress
+    }
+    
     @IBAction func registerPressed(_ sender: UIButton) {
         
         guard let email = emailTextfield.text, let password = passwordTextfield.text else { return }

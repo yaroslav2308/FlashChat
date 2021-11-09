@@ -13,6 +13,10 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
     
+    override func viewDidLoad() {
+        emailTextfield.keyboardType = .emailAddress
+    }
+    
 
     @IBAction func loginPressed(_ sender: UIButton) {
         guard let email = emailTextfield.text, let password = passwordTextfield.text else { return }
