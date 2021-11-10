@@ -14,6 +14,15 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor(named: K.BrandColors.blue)
+        navigationController!.navigationBar.standardAppearance = appearance
+        navigationController!.navigationBar.scrollEdgeAppearance = appearance
+    }
+    
     override func viewDidLoad() {
         emailTextfield.keyboardType = .emailAddress
     }
