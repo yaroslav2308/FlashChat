@@ -29,7 +29,6 @@ class ChatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
-        title = K.appName
         navigationItem.hidesBackButton = true
         
         tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
@@ -118,8 +117,8 @@ extension ChatViewController: UITableViewDataSource {
         }
         //this is a message from the another user
         else {
-            cell.rightImageView.isHidden = false
-            cell.leftImageView.isHidden = true
+            cell.leftImageView.isHidden = false
+            cell.rightImageView.isHidden = true
             cell.messageBubble.backgroundColor = UIColor(named: K.BrandColors.purple)
             cell.label.textColor = UIColor(named: K.BrandColors.lightPurple)
         }
